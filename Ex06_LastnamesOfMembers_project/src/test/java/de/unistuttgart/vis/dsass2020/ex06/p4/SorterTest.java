@@ -26,10 +26,10 @@ public class SorterTest {
             System.out.println(list.get(i));
         }
 
-        ISimpleList list1 = Sorter.createHeapProperties(list);
+       Sorter.heapSort(list);
 
-        for(int i = 0 ; i < list1.size(); i++){
-            System.out.println(list1.get(i));
+        for(int i = 0 ; i < list.size(); i++){
+            System.out.println(list.get(i));
         }
 
 

@@ -3,6 +3,8 @@ package de.unistuttgart.vis.dsass2020.ex06.p4;
 public class Sorter {
 
 	public static <T extends Comparable<T>> void heapSort(ISimpleList<T> list) {
+		ISimpleList unsortedList = createHeapProperties(list);
+		heapSortAlgorithm(unsortedList);
 
 	}
 
@@ -47,10 +49,18 @@ public class Sorter {
 		}
 	}
 
-	private static void swap(Comparable[] f, int i1, int i2){
-		Comparable tmp = f[i1]; // f: Feld
-		f[i1] = f[i2];
-		f[i2] = tmp;
+	public static void heapSortAlgorithm(ISimpleList list) {
+		int i;
+		for (i = list.size() / 2; i >= 0; i--) {
+			percolate(list, i, list.size()-1);
+		}
+		for (i = list.size() - 1; i > 0; i--) {
+// tausche jeweils letztes Element des Heaps mit dem ersten
+			list.swap(0, i);
+// Heap wird von Position 0 bis i-1 hergestellt
+			percolate(list, 0, i-1);
+		}
+
 	}
 
 }
