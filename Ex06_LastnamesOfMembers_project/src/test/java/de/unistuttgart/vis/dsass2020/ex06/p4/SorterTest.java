@@ -19,17 +19,19 @@ public class SorterTest {
         list.append(5);
         list.append(6);
         list.append(7);
-        list.append(8);
+        list.append(-8);
+        list.append(3);
         list.append(3);
 
         for(int i = 0 ; i < list.size(); i++){
-            System.out.println(list.get(i));
+            System.out.print(list.get(i) + "\t");
         }
 
        Sorter.heapSort(list);
+        System.out.println("");
 
         for(int i = 0 ; i < list.size(); i++){
-            System.out.println(list.get(i));
+            System.out.print(list.get(i) + "\t");
         }
 
 
