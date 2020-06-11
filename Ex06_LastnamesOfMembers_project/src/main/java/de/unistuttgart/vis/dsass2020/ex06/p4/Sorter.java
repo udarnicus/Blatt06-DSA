@@ -16,7 +16,7 @@ public class Sorter {
 		if(list == null){
 			throw new IllegalArgumentException();
 		}else{
-			ISimpleList unsortedList = createHeapProperties(list);
+			ISimpleList<T> unsortedList = createHeapProperties(list);
 			heapSortAlgorithm(unsortedList);
 		}
 
@@ -32,7 +32,7 @@ public class Sorter {
 	 * @return
 	 */
 
-	public static ISimpleList createHeapProperties(ISimpleList list){
+	private static ISimpleList createHeapProperties(ISimpleList list){
 		int index = (list.size() -1) / 2;
 		while(index >= 0){
 			percolate(list, index, list.size()-1);
